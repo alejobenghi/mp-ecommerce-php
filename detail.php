@@ -12,7 +12,7 @@
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
     $preference->external_reference ="alejo.bgh@gmail.com";
-    $preference->notification_url=_PathUrl_.'notifications/webhook.php';
+    $preference->notification_url = _PathUrl_.'notifications/webhook.php';
     
     $preference->payment_methods = array(
         "excluded_payment_methods" => array(
