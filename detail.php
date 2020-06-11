@@ -29,6 +29,7 @@
         "failure" => _PathUrl_.'status/failure.php',
         "pending" => _PathUrl_.'status/pending.php'
     );
+    $descripcion = utf8_decode('Dispositivo móvil de Tienda e-commerce');
     $preference->auto_return = "approved";
     // Crea un ítem en la preferencia
     $item = new MercadoPago\Item();
@@ -36,7 +37,7 @@
     $item->title = $_POST['title'];
     $item->quantity = $_POST['unit'];
     $item->unit_price = $_POST['price'];
-    $item->description = utf8_decode("Dispositivo móvil de Tienda e-commerce");
+    $item->description = $descripcion;
     $item->picture_url = _PathUrl_.'assets/'.str_replace(' ','',$_POST['title']).'.jpg';
     
     
