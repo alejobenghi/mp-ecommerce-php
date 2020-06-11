@@ -29,7 +29,7 @@
         "failure" => _PathUrl_.'status/failure.php',
         "pending" => _PathUrl_.'status/pending.php'
     );
-    $descripcion = utf8_decode('Dispositivo móvil de Tienda e-commerce');
+    $descripcion = utf8_encode('Dispositivo móvil de Tienda e-commerce');
     $preference->auto_return = "approved";
     // Crea un ítem en la preferencia
     $item = new MercadoPago\Item();
