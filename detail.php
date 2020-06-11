@@ -7,6 +7,8 @@
     
     MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 
+    $aux = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
+    define("_PathUrl_",  $aux."://".$_SERVER["HTTP_HOST"]."/");
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
     $preference->external_reference ="alejo.bgh@gmail.com";
@@ -22,8 +24,6 @@
         "installments" => 6
       );
 
-    $aux = isset($_SERVER["HTTPS"]) ? 'https' : 'http';
-    define("_PathUrl_",  $aux."://".$_SERVER["HTTP_HOST"]."/");
     $preference->back_urls = array(
         "success" => _PathUrl_.'status/success.php',
         "failure" => _PathUrl_.'status/failure.php',
