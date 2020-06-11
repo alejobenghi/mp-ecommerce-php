@@ -7,12 +7,47 @@
 
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
+    $preference->external_reference ="alejo.bgh@gmail.com";
+    
+    $preference->payment_methods = array(
+        "excluded_payment_methods" => array(
+          array("id" => "amex")
+        ),
+        "excluded_payment_types" => array(
+          array("id" => "atm")
+        ),
+        "installments" => 6
+      );
 
     // Crea un ítem en la preferencia
     $item = new MercadoPago\Item();
+    $item->id = "1234";
     $item->title = $_POST['title'];
     $item->quantity = $_POST['unit'];
     $item->unit_price = $_POST['price'];
+    $item->description = "Dispositivo móvil de Tienda e-commerce";
+    $item->picture_url = "https://alejobenghi-mp-commerce-php.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg";
+    
+    
+    
+    $payer = new MercadoPago\Payer();
+    $payer->name = "Lalo";
+    $payer->surname = "Landa";
+    $payer->email = "test_user_63274575@testuser.com";
+    $payer->phone = array(
+      "area_code" => "11",
+      "number" => "22223333"
+    );
+
+    
+
+    $payer->address = array(
+      "street_name" => "False",
+      "street_number" => 123,
+      "zip_code" => "1111"
+    );
+  
+    $preference->payer = $payer;
     $preference->items = array($item);
     $preference->save();
 ?>
