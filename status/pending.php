@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="as-accessories-results  as-search-desktop">
-                           El pago está pendiente de aprobación.
+                           El pago está pendiente.
                         </div>
                     </div>
                 </div>

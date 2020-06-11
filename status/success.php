@@ -88,8 +88,13 @@
 
                             </div>
                         </div>
-                        <div class="as-accessories-results  as-search-desktop">
+                        <div class="as-accessories-results  as-search-desktop" style="padding:0 0 0 40px;">
                            Felicitaciones! La transacción ha sido realizada correctamente.
+                           <?php
+                           echo '<br> <pre>';
+                            print_r($_GET);
+                            echo '</pre>';
+                            ?>
                         </div>
                     </div>
                 </div>
