@@ -26,7 +26,7 @@
     $item->quantity = $_POST['unit'];
     $item->unit_price = $_POST['price'];
     $item->description = "Dispositivo móvil de Tienda e-commerce";
-    $item->picture_url = "https://alejobenghi-mp-commerce-php.herokuapp.com/assets/samsung-galaxy-s9-xxl.jpg";
+    $item->picture_url = "https://alejobenghi-mp-commerce-php.herokuapp.com/assets/".str_replace(' ','',$_POST['title']).".jpg";
     
     
     
