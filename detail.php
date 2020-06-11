@@ -195,7 +195,7 @@
                                     </div>
                                     <!--<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
                                     
-                                        <a href="<?php $preferencia->init_point?>">Pagar la compra</a> 
+                                        <a href="<?php echo $preferencia->init_point; ?>">Pagar la compra</a> 
                                 </div>
                             </div>
                         </div>
