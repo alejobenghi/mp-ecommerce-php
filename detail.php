@@ -10,6 +10,7 @@
     // Crea un objeto de preferencia
     $preference = new MercadoPago\Preference();
     $preference->external_reference ="alejo.bgh@gmail.com";
+    $preference->notification_url=_PathUrl_.'notifications/webhook.php';
     
     $preference->payment_methods = array(
         "excluded_payment_methods" => array(
@@ -35,7 +36,7 @@
     $item->title = $_POST['title'];
     $item->quantity = $_POST['unit'];
     $item->unit_price = $_POST['price'];
-    $item->description = "Dispositivo móvil de Tienda e-commerce";
+    $item->description = utf8_decode("Dispositivo móvil de Tienda e-commerce");
     $item->picture_url = _PathUrl_.'assets/'.str_replace(' ','',$_POST['title']).'.jpg';
     
     
@@ -62,6 +63,7 @@
     $preference->save();
 ?>
 <!DOCTYPE html>
+
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=1024">
@@ -69,7 +71,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no">
-
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
